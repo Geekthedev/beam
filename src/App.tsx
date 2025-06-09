@@ -7,11 +7,19 @@ import { RegisterPage } from './components/pages/RegisterPage';
 import { OnboardingPage } from './components/pages/OnboardingPage';
 import { DashboardPage } from './components/pages/DashboardPage';
 import { CourseExplorerPage } from './components/pages/CourseExplorerPage';
-// import { CoursesPage } from './components/pages/CoursesPage';
-// import { AITutorPage } from './components/pages/AITutorPage';
-// import { NotebookPage } from './components/pages/NotebookPage';
-// import { AchievementsPage } from './components/pages/AchievementsPage';
-// import { SettingsPage } from './components/pages/SettingsPage';
+
+// Auth Pages
+import { SignUpStudentPage } from './components/pages/auth/SignUpStudentPage';
+import { SignUpTeacherPage } from './components/pages/auth/SignUpTeacherPage';
+import { SignUpParentPage } from './components/pages/auth/SignUpParentPage';
+import { SignUpAdminPage } from './components/pages/auth/SignUpAdminPage';
+import { ForgotPasswordPage } from './components/pages/auth/ForgotPasswordPage';
+import { VerifyEmailPage } from './components/pages/auth/VerifyEmailPage';
+
+// Student Pages
+import { StudentDashboardPage } from './components/pages/student/StudentDashboardPage';
+import { BrowseCoursesPage } from './components/pages/student/BrowseCoursesPage';
+
 import { useBeamStore } from './store/useBeamStore';
 import { mockUser, mockCourses, mockAchievements } from './data/mockData';
 
@@ -47,9 +55,23 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          
+          {/* Auth Routes */}
+          <Route path="/signup/student" element={<SignUpStudentPage />} />
+          <Route path="/signup/teacher" element={<SignUpTeacherPage />} />
+          <Route path="/signup/parent" element={<SignUpParentPage />} />
+          <Route path="/signup/admin" element={<SignUpAdminPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/verify-email" element={<VerifyEmailPage />} />
+          
           <Route path="/onboarding" element={<OnboardingPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/explorer" element={<CourseExplorerPage />} />
+          
+          {/* Student Routes */}
+          <Route path="/student/dashboard" element={<StudentDashboardPage />} />
+          <Route path="/student/browse-courses" element={<BrowseCoursesPage />} />
+          
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
