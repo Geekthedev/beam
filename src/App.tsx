@@ -72,7 +72,7 @@ function App() {
           <Route path="/student/dashboard" element={<StudentDashboardPage />} />
           <Route path="/student/browse-courses" element={<BrowseCoursesPage />} />
           
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/\" replace />} />
         </Routes>
       </Layout>
     </Router>
